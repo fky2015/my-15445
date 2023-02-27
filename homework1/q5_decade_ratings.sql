@@ -1,0 +1,1 @@
+SELECT ((t.premiered / 10) || '0s') AS decade, ROUND(AVG(r.rating), 2), ROUND(MAX(r.rating), 2), ROUND(MIN(r.rating), 2), COUNT(*) FROM titles as t, ratings as r WHERE t.title_id = r.title_id AND t.premiered IS NOT NULL GROUP BY decade;

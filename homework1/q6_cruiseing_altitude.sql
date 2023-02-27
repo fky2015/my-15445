@@ -1,0 +1,1 @@
+SELECT t.primary_title, SUM(r.votes) as v FROM people AS p, ratings AS r, crew AS c, titles as t WHERE c.title_id = t.title_id AND p.person_id = c.person_id AND c.title_id = r.title_id AND p.name LIKE '%Cruise%' AND p.born = 1962 GROUP BY t.primary_title ORDER BY v DESC LIMIT 10;
